@@ -17,6 +17,13 @@ The app is for one user, not a team or SaaS product. The user manages self-direc
 
 The product should not be a generic todo list. Its core purpose is to help the user capture messy tasks and thoughts, connect them to project context, break them down into executable actions, recommend what to do now, and update project understanding through lightweight work logs.
 
+Language requirement:
+
+- Build the user-facing app in Korean.
+- All UI copy, navigation labels, buttons, empty states, helper text, AI assistant messages, recommendation reasons, clarification questions, log summaries, sample projects, and sample tasks should be written in Korean.
+- Technical identifiers, JSON field names, enum values, function names, and external API names may remain in English.
+- Do not default to English product copy.
+
 Core product loop:
 
 Capture -> Project linking -> Task breakdown -> Context-aware recommendation -> Execution -> Work log -> Project understanding update.
@@ -165,6 +172,7 @@ Recommendation ranking should prioritize:
 Design tone:
 
 - Calm, utilitarian, work-focused
+- Korean-first user experience
 - Avoid marketing-style landing pages
 - Avoid decorative hero sections
 - Prioritize clarity, scanability, and fast action

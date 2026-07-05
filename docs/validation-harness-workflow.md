@@ -50,6 +50,13 @@
 
 ### 체크리스트
 
+언어:
+
+- 사용자-facing UI가 한국어인가
+- AI 질문과 추천 이유가 한국어인가
+- 샘플 프로젝트와 작업 데이터가 한국어인가
+- 기술 식별자를 제외한 기본 제품 문구가 영어로 남아 있지 않은가
+
 오늘 작업 화면:
 
 - 첫 화면이 Today Work Screen인가
@@ -370,4 +377,3 @@ Google AI Studio는 웹 앱 빌드를 지원하며, Gemini API는 function calli
 - https://developers.google.com/workspace/calendar/api/v3/reference/events/list
 - https://developers.google.com/workspace/sheets/api/guides/values
 - https://developers.google.com/workspace/sheets/api/samples/writing
-

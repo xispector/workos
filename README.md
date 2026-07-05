@@ -24,3 +24,5 @@ The goal is to turn messy tasks, project context, execution recommendations, wor
 ## Current Status
 
 The project is in product planning and prototype-specification stage. No application code has been implemented yet.
+
+The app should be built primarily in Korean. User-facing UI copy, AI assistant responses, prompts, sample data, and default product language should all be Korean unless a specific technical identifier or external API requires English.

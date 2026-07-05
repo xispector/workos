@@ -14,6 +14,8 @@ AI 출력은 가능한 한 구조화한다.
 
 필수 원칙:
 
+- 사용자-facing 텍스트 값은 한국어로 작성한다.
+- JSON 필드명, enum 값, 함수명은 영어를 유지한다.
 - 중요한 판단에는 reason을 포함한다.
 - 확신이 낮으면 confidence를 낮게 표시한다.
 - 사용자에게 질문할 때는 한 번에 하나만 묻는다.
@@ -416,4 +418,3 @@ Google AI Studio 프로토타입 기준으로 필요한 AI 기능:
 다음 문서는 `google-ai-studio-prototype-prompt.md`다.
 
 이 문서에서는 지금까지 작성한 제품 명세를 바탕으로 Google AI Studio에서 앱 초안을 만들기 위한 통합 프롬프트를 작성한다.
-
