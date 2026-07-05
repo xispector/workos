@@ -51,6 +51,9 @@
 - `data-model-draft.md`
   - 저장 가능한 개념 모델 초안
 
+- `project-dashboard-implementation-guidelines.md`
+  - 프로젝트 대시보드 구성과 구현 지침
+
 ### AI Spec
 
 - `ai-behavior-spec.md`
@@ -147,4 +150,3 @@
 다음 작업은 `acceptance-criteria.md`를 작성하는 것이다.
 
 이 문서가 있어야 AI Studio에서 만든 결과물이 실제로 쓸 만한지 일관되게 평가할 수 있다.
-

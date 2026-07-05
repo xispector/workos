@@ -32,8 +32,9 @@ Main screens:
 
 1. Today Work Screen
 2. Quick Capture Flow
-3. Project Detail Screen
-4. Weekly Planning Screen
+3. Project Dashboard Screen
+4. Project Detail Screen
+5. Weekly Planning Screen
 
 The first screen should be the Today Work Screen.
 
@@ -69,6 +70,47 @@ Quick Capture requirements:
   - next action for the current context
 - If the AI is uncertain, it should ask only one narrow question at a time.
 - Avoid long forms and many-choice questions.
+
+Project Dashboard Screen requirements:
+
+- This screen lets the user inspect project status directly without asking the AI in chat.
+- It should be a practical status-scanning dashboard, not a decorative analytics page.
+- Show a summary strip:
+  - Advance projects
+  - Blocked projects
+  - Delay risk projects
+  - Recent artifacts in the last 7 days
+- Show a Needs Attention section for:
+  - blocked projects
+  - delay risk projects
+  - projects with no high-trust log near target date
+  - projects with no artifact for 2+ weeks
+  - projects missing a next 10-minute action
+- Show a dense project list.
+- Each project row should show:
+  - project name
+  - status stage
+  - weekly role
+  - current context summary
+  - next small outcome
+  - next 10-minute action
+  - last high-trust log date
+  - target date or delay risk
+- Default sorting:
+  1. blocked projects
+  2. delay risk projects
+  3. this week's advance projects
+  4. recently active projects
+  5. maintain projects
+  6. deferred projects
+- Include filters:
+  - All
+  - Advance
+  - Maintain
+  - Defer
+  - Blocked
+  - Delay Risk
+- All visible labels and copy should be Korean.
 
 Project Detail Screen requirements:
 
@@ -236,3 +278,4 @@ Google AI Studio에서 만든 초안은 다음 기준으로 검토한다.
 - AI가 자동 로그를 과장하지 않는가?
 - 앱 DB가 source of truth로 유지되는가?
 - Google Sheets/Calendar 연동은 선택적이고 실패해도 앱 데이터가 보존되는가?
+- 프로젝트 대시보드에서 전체 프로젝트 상태를 AI 채팅 없이 직접 볼 수 있는가?
