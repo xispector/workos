@@ -17,7 +17,7 @@ The goal is to turn messy tasks, project context, execution recommendations, wor
 - `docs/ai-contract-spec.md` - AI input/output contracts and JSON structures.
 - `docs/google-ai-studio-prototype-prompt.md` - Prototype prompt for Google AI Studio.
 - `docs/validation-harness-workflow.md` - Validation harness and test scenarios.
-- `docs/persistence-and-database-strategy.md` - Persistence and database strategy.
+- `docs/persistence-and-database-strategy.md` - Persistence and database strategy. Recommends Firebase Firestore as the app database for the real MVP.
 - `docs/google-integrations-strategy.md` - Google Sheets, Calendar, and Gemini function calling integration strategy.
 - `docs/documentation-roadmap.md` - Documentation roadmap.
 

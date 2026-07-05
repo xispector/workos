@@ -6,7 +6,7 @@
 
 이 문서는 Personal Work OS의 핵심 데이터를 저장 가능한 형태로 정리한 초안이다.
 
-아직 특정 데이터베이스, ORM, 프레임워크에 종속되지 않는다. Google AI Studio나 이후 웹 앱 구현 단계에서 데이터 구조를 설명하기 위한 개념 모델이다.
+아직 ORM이나 프레임워크에 종속되지 않는다. 다만 실제 개인용 MVP의 권장 데이터베이스는 Firebase Firestore다. 이 문서는 Firestore 컬렉션으로 옮기기 쉬운 개념 모델로 작성한다.
 
 ## 2. 설계 원칙
 
@@ -42,6 +42,33 @@ Task는 Project 없이 판단하기 어렵다. 가능한 한 Task는 Project에 
 - GoalAdjustment
 - AIQuestion
 - UserPreference
+
+## 3.1 Firestore Collection Draft
+
+실제 MVP에서 권장하는 Firestore 컬렉션 초안:
+
+- `projects`
+- `tasks`
+- `captureItems`
+- `workContexts`
+- `recommendations`
+- `workLogs`
+- `artifacts`
+- `weeklyPlans`
+- `weeklyProjectDecisions`
+- `goalAdjustments`
+- `aiQuestions`
+- `userPreferences`
+- `integrationSyncStatus`
+
+MVP에서는 단일 사용자 앱이므로 모든 문서에 `userId`를 필드로 둘 수 있다. 초기 개인용만 고려한다면 `userId`는 고정값으로 시작할 수 있지만, Firebase Authentication을 붙이면 실제 사용자 id로 전환한다.
+
+권장:
+
+- 큰 객체는 독립 컬렉션으로 둔다.
+- WorkLog처럼 누적되는 데이터는 별도 컬렉션으로 둔다.
+- Project 문서 안에는 최근 요약과 현재 상태만 둔다.
+- 긴 로그 목록을 Project 문서에 중첩 저장하지 않는다.
 
 ## 4. Project
 
@@ -556,4 +583,3 @@ WorkLog가 생성되면 AI는 다음 업데이트 후보를 만든다.
 다음 문서는 `ai-contract-spec.md`다.
 
 이 문서에서는 AI가 위 데이터를 입력받아 어떤 JSON을 반환해야 하는지 정의한다.
-

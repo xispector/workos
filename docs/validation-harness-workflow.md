@@ -252,6 +252,8 @@ WorkContext:
 
 데이터가 연결성을 잃지 않고 축적되는지 확인한다.
 
+실제 개인용 MVP에서는 Firebase Firestore가 source of truth로 동작하는지 확인한다. Google Sheets와 Calendar 연동 실패가 Firestore의 원본 데이터를 손상시키면 안 된다.
+
 ### 검증 규칙
 
 Project:

@@ -166,11 +166,15 @@ Work completion flow:
 Persistence and integration requirements:
 
 - The app should treat its internal app database as the source of truth.
+- For the first visual prototype, mock data or local browser storage is acceptable.
+- For the real personal MVP, use Firebase Firestore as the recommended app database.
+- Use Firebase Authentication if login is needed.
 - Google Sheets and Google Calendar are optional integrations, not the primary database.
 - Google Sheets should be used for export and review, especially WorkLogs, Projects, WeeklyPlans, and GoalAdjustments.
 - Google Calendar should be used for target dates, focus blocks, and weekly review events only after user confirmation.
 - Do not automatically create calendar events for every recommended task.
 - External API failures must not delete or corrupt internal app data.
+- Firestore data should remain the source of truth even if Google Sheets or Calendar sync fails.
 - Store sync status for external exports or calendar event creation:
   - not_synced
   - synced

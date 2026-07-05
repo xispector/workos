@@ -12,6 +12,8 @@
 
 연동으로 생성되는 사용자-facing 데이터도 한국어를 기본으로 한다. 예를 들어 Google Calendar 이벤트 제목, Google Sheets 컬럼 표시명, export된 로그 요약은 한국어로 작성한다. API 필드명과 함수명은 영어를 유지할 수 있다.
 
+실제 개인용 MVP의 권장 앱 DB는 Firebase Firestore다. Google Sheets와 Calendar는 Firestore에 저장된 원본 데이터를 외부로 표현하거나 export하는 보조 연동으로 사용한다.
+
 ## 2. 공식 기능 근거
 
 현재 공식 문서 기준:
@@ -37,7 +39,7 @@
 
 없음.
 
-MVP 핵심 루프는 Google Sheets/Calendar 없이도 동작해야 한다.
+MVP 핵심 루프는 Google Sheets/Calendar 없이도 동작해야 한다. 실제 저장은 Firebase Firestore를 원본으로 두는 것이 권장된다.
 
 ### MVP 이후 1순위
 
@@ -144,7 +146,7 @@ Sheets export 실패는 앱 핵심 데이터 저장 실패가 아니다.
 
 처리:
 
-1. 앱 DB에 먼저 저장
+1. Firestore에 먼저 저장
 2. Sheets export 시도
 3. 실패하면 syncStatus = failed
 4. 나중에 재시도 가능
@@ -410,12 +412,13 @@ Calendar:
 
 추천 순서:
 
-1. 앱 내부 DB만으로 핵심 루프 구현
-2. WorkLogs Google Sheets export
-3. WeeklyPlan Google Sheets export
-4. Project targetDate -> Calendar event 생성
-5. Weekly review Calendar event 생성
-6. Calendar events 조회 후 주간 판단 보조
+1. mock/local storage로 첫 프로토타입 구현
+2. Firebase Firestore로 핵심 데이터 저장 전환
+3. WorkLogs Google Sheets export
+4. WeeklyPlan Google Sheets export
+5. Project targetDate -> Calendar event 생성
+6. Weekly review Calendar event 생성
+7. Calendar events 조회 후 주간 판단 보조
 
 ## 11. 검증 시나리오
 
@@ -454,6 +457,8 @@ Google Sheets와 Calendar는 이 제품의 중심이 아니다.
 중심은 다음이다.
 
 수집 -> 프로젝트 이해 -> 실행 추천 -> 로그 -> 프로젝트 이해 업데이트
+
+이 루프의 원본 데이터는 Firestore에 저장한다.
 
 Google 연동은 이 루프를 보조해야 한다.
 

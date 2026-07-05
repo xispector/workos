@@ -71,7 +71,7 @@
   - AI가 만든 프로토타입이 제품 의도대로 동작하는지 검증하는 하네스와 시나리오
 
 - `persistence-and-database-strategy.md`
-  - 앱 DB, Google Sheets, Google Calendar의 역할과 source of truth 전략
+  - Firebase Firestore, Google Sheets, Google Calendar의 역할과 source of truth 전략
 
 - `google-integrations-strategy.md`
   - Google Sheets/Calendar/Gemini function calling 연동 전략
